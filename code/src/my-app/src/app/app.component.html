@@ -1,0 +1,13 @@
+<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+  <div class="navbar-nav">
+      <a class="nav-item nav-link" routerLink="/" routerLinkActive="active">Início</a>
+      <a class="nav-item nav-link" routerLink="/doses">Doses</a>
+      <a class="nav-item nav-link" routerLink="/Vacinados">Vacinados</a>      
+  </div>
+</nav>
+
+<!-- main app container -->
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
