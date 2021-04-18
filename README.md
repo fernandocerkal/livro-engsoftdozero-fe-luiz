@@ -1,2 +1,4 @@
-# livro-engsoftdozero-fe-luiz
-Exercícios de frontend do livro Engenheiro de Software do Zero!
+# Livro Engenheiro(a) de Soft do Zero!
+
+Exercícios de front-end!
+

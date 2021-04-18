@@ -1,0 +1,20 @@
+<div class="card mt-4">
+    <h4 class="card-header">Doses</h4>
+    <div class="card-body">
+        <h6>Lista de Doses:</h6>
+        <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>        
+        
+        <table class="table table-striped" style="font-size: 12px;" *ngIf="doses">
+            <thead>            
+                <th scope="col"> Id. </th>
+                <th scope="col"> Descrição </th>                
+            </thead>
+            <tbody>
+                <tr *ngFor="let dose of doses" >                    
+                    <td> {{dose.identificador}} </td>
+                    <td> {{dose.descricao}} </td>                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

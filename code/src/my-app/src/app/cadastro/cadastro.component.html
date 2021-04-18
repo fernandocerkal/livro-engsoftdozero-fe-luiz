@@ -1,0 +1,35 @@
+<div class="card mt-4">
+    <h4 class="card-header">Cadastrar Vacinado</h4>
+    <div class="card-body">
+        <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="cpf">CPF</label>
+                <input type="text" formControlName="cpf" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.cpf.errors }" />
+                <div *ngIf="submitted && form.cpf.errors" class="invalid-feedback">
+                    <div *ngIf="form.cpf.errors.required">O campo CPF é obrigatório</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="rg">RG</label>
+                <input type="text" formControlName="rg" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.rg.errors }" />
+                <div *ngIf="submitted && form.rg.errors" class="invalid-feedback">
+                    <div *ngIf="form.rg.errors.required">O campo RG é obrigatório</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="dose">Dose</label>
+                <select class="form-control" formControlName="dose">
+                    <!-- escrever no livro sobre os campos json estarem em cammelCase -->
+                    <option value="dose.identificador" *ngFor="let dose of doses" >{{dose.descricao}}</option>
+                </select>
+            </div>
+           
+            <button [disabled]="loading" class="btn btn-primary">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                Cadastrar
+            </button>
+            <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+        </form>
+    </div>
+</div>

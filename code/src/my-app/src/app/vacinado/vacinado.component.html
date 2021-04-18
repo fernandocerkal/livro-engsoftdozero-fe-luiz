@@ -1,0 +1,26 @@
+<div class="card mt-4">
+    <h4 class="card-header">Vacinados</h4>
+    <div class="card-body">
+        <h6>Lista de Vacinados:</h6>
+        <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>        
+        
+        <table class="table table-striped" style="font-size: 12px;" *ngIf="vacinados">
+            <thead>            
+                <th scope="col"> Id. </th>
+                <th scope="col"> CPF </th>
+                <th scope="col"> RG </th>
+                <th scope="col"> Data/Hora </th>                
+                <th scope="col"> Dose da Vacina </th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let vacinado of vacinados" >
+                    <td> {{vacinado.identificador}} </td>
+                    <td> {{vacinado.cpf}} </td>      
+                    <td> {{vacinado.rg}} </td>      
+                    <td> {{vacinado.dataHora}} </td>      
+                    <td> {{vacinado.dose.descricao}} </td>      
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
