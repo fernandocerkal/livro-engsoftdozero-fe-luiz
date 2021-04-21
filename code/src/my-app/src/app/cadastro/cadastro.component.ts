@@ -33,6 +33,7 @@ export class CadastroComponent implements OnInit {
     get form() { return this.cadastroForm.controls; }
 
     onSubmit() {
+        
         this.submitted = true;
         
         if (this.cadastroForm.invalid) {
@@ -44,7 +45,7 @@ export class CadastroComponent implements OnInit {
         vacinado.cpf = this.form.cpf.value;
         vacinado.rg = this.form.rg.value;
         vacinado.dose = new Dose();
-        vacinado.dose.identificador = this.form.dose.value;
+        vacinado.dose.identificador = parseInt(this.form.dose.value);
 
         this.vacinadoService.insert(vacinado)
             .pipe(first())

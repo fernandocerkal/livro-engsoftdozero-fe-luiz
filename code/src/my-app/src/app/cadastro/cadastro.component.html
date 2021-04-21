@@ -19,9 +19,8 @@
 
             <div class="form-group">
                 <label for="dose">Dose</label>
-                <select class="form-control" formControlName="dose">
-                    <!-- escrever no livro sobre os campos json estarem em cammelCase -->
-                    <option value="dose.identificador" *ngFor="let dose of doses" >{{dose.descricao}}</option>
+                <select class="form-control" formControlName="dose">                    
+                    <option value="{{dose.identificador}}" *ngFor="let dose of doses" >{{dose.descricao}}</option>
                 </select>
             </div>
            
