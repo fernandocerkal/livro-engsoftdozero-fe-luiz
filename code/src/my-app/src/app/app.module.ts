@@ -8,19 +8,23 @@ import { DoseComponent } from './dose';
 import { VacinadoComponent } from './vacinado';
 import { CadastroComponent } from './cadastro';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ChartsModule } from 'ng2-charts';
+import { RelatorioComponent } from './relatorio';
 
 @NgModule({
   declarations: [
     AppComponent,
     DoseComponent,
     VacinadoComponent,
-    CadastroComponent
+    CadastroComponent,
+    RelatorioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
