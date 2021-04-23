@@ -29,7 +29,8 @@ export class RelatorioComponent  {
 
   ngOnInit() {
     
-    //todo: se for nulo, pegar do servidor
+    //todo: para melhorar, você poderá substituir este código. Ao invés de pegar os dados do cache, 
+    // você pode pegar os dados acessando os serviços de Dose e Vacinado. Assim não corre o risco de não existir os dados.
     this.doses = JSON.parse(localStorage.getItem('doses'));
     this.vacinados = JSON.parse(localStorage.getItem('vacinados'));
     
@@ -54,9 +55,7 @@ export class RelatorioComponent  {
             case this.terceiroAno: 
                 data[2] = parseInt(data[2].toString()) + 1;                
             break;
-        }
-        console.log(JSON.stringify(data));
+        }        
     });
   }
 }
-
